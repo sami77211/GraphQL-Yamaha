@@ -3,9 +3,11 @@ const { ApolloServer, gql } = require('apollo-server-express');
 const axios = require('axios');
 const qs = require('qs');
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
-const BASE_URL = 'http://10.101.159.101:8370/POS';
-const HOST = '10.101.159.101';
+
+const BASE_URL = process.env.BASE_URL;
+const HOST = process.env.HOST;
 
 // === 1. Schéma GraphQL ===
 const typeDefs = gql`
